@@ -1,0 +1,19 @@
+GitHub push commands
+
+1. Create an empty GitHub repo named:
+storyboard-ai-generator
+
+2. Open terminal inside this folder.
+
+3. Run:
+
+git init
+git add .
+git commit -m "Initial storyboard generator"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/storyboard-ai-generator.git
+git push -u origin main
+
+Important:
+Do not upload .env.
+Only upload .env.example.

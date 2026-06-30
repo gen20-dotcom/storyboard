@@ -1,0 +1,31 @@
+{
+  "name": "storyboard-ai-generator",
+  "version": "1.0.0",
+  "description": "Paste a screenplay scene and generate cinematic black-and-white storyboard pages using an image generation backend.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "storyboard",
+    "screenplay",
+    "filmmaking",
+    "openai",
+    "image-generation",
+    "node",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "openai": "^5.0.0"
+  }
+}

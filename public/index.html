@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storyboard AI Generator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SB</div>
+        <div>
+          <h1>Storyboard AI Generator</h1>
+          <p>Scene select → AI storyboard sheet</p>
+        </div>
+      </div>
+
+      <label for="project">Project</label>
+      <input id="project" value="Mid-Air Emergency" />
+
+      <div class="row">
+        <div>
+          <label for="panelCount">Panels</label>
+          <select id="panelCount">
+            <option value="6">6</option>
+            <option value="9" selected>9</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+        <div>
+          <label for="mode">Mode</label>
+          <select id="mode">
+            <option value="page" selected>Full page like reference</option>
+            <option value="panels">Panel-by-panel sheet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="quality">Quality</label>
+          <select id="quality">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div>
+          <label for="size">Size</label>
+          <select id="size">
+            <option value="1536x1024" selected>Landscape</option>
+            <option value="1024x1024">Square</option>
+            <option value="1024x1536">Vertical</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="scenePicker">Detected scenes</label>
+      <select id="scenePicker">
+        <option value="all">Whole text</option>
+      </select>
+
+      <label for="script">Scene / screenplay</label>
+      <textarea id="script" spellcheck="false"></textarea>
+
+      <div class="buttons">
+        <button id="detectBtn">Detect scenes</button>
+        <button id="generateBtn">Generate storyboard</button>
+        <button class="secondary" id="selectedBtn">Generate selected text</button>
+        <button class="secondary" id="copyBtn">Copy prompts</button>
+        <button class="secondary" onclick="window.print()">Print / Save PDF</button>
+      </div>
+
+      <div id="status" class="status">Ready.</div>
+      <p class="note">API key is used only on the Node backend. Never put your key in browser JavaScript.</p>
+    </aside>
+
+    <main class="main">
+      <section class="topbar">
+        <div>
+          <h2>Storyboard Output</h2>
+          <p>Black-and-white cinematic storyboard page.</p>
+        </div>
+        <div class="chips">
+          <span id="sceneChip">Scene: none</span>
+          <span id="beatChip">Beats: 0</span>
+          <span id="panelChip">Panels: 0</span>
+        </div>
+      </section>
+
+      <section id="output" class="output">
+        <div class="empty">Paste a scene and click Generate storyboard.</div>
+      </section>
+
+      <details class="prompt-box" open>
+        <summary>Generated prompts</summary>
+        <div id="prompts"></div>
+      </details>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
